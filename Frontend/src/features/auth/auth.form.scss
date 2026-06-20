@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600&display=swap');
+
+
+// ── Variables ────────────────────────────────────────────────────────────────
+$bg-page:       #f0f7f4;
+$bg-card:       #ffffff;
+$border-color:  #c2ddd4;
+$text-primary:  #1a2e28;
+$text-muted:    #6b9186;
+$accent:        #3d9e7e;
+$accent-dark:   #2e7d62;
+$input-bg:      #f5fbf8;
+$error:         #e05c7a;
+
+// ── Page Shell ───────────────────────────────────────────────────────────────
+main {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bg-page;
+    background-image:
+        radial-gradient(circle at 20% 30%, #d4ede6 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, #ddd8f0 0%, transparent 40%);
+    font-family: 'Inter', sans-serif;
+
+    // ── Card ─────────────────────────────────────────────────────────────────
+    .form-container {
+        min-width: 360px;
+        background-color: $bg-card;
+        border: 1.5px solid $border-color;
+        border-radius: 1.25rem;
+        padding: 2.5rem 2rem;
+        box-shadow: 0 4px 24px rgba(61, 158, 126, 0.08);
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2rem;
+            color: $text-primary;
+            margin: 0;
+        }
+
+        p {
+            font-size: 0.85rem;
+            color: $text-muted;
+            margin: 0;
+        }
+    }
+
+    // ── Form ─────────────────────────────────────────────────────────────────
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    // ── Input Group ──────────────────────────────────────────────────────────
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+
+        label {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: $text-muted;
+            letter-spacing: 0.02em;
+        }
+
+        input {
+            border: 1.5px solid $border-color;
+            outline: none;
+            padding-inline: 1rem;
+            padding-block: 0.75rem;
+            border-radius: 0.6rem;
+            background-color: $input-bg;
+            color: $text-primary;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            transition: border-color 0.2s, background-color 0.2s;
+
+            &::placeholder {
+                color: lighten($text-muted, 20%);
+            }
+
+            &:focus {
+                border-color: $accent;
+                background-color: #fff;
+            }
+        }
+    }
+
+    // ── Button ───────────────────────────────────────────────────────────────
+    .primary-button {
+        margin-top: 0.25rem;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(135deg, $accent 0%, $accent-dark 100%);
+        color: #fff;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 0.6rem;
+        cursor: pointer;
+        font-family: 'Inter', sans-serif;
+        box-shadow: 0 3px 12px rgba($accent, 0.3);
+        transition: opacity 0.2s, transform 0.1s;
+
+        &:hover {
+            opacity: 0.92;
+            transform: translateY(-1px);
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+
+    // ── Link ─────────────────────────────────────────────────────────────────
+    a {
+        color: $accent;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
