@@ -2,6 +2,11 @@
 
 Interview AI is an AI-powered interview preparation platform that helps candidates prepare smarter by analyzing their resume and target job description. It generates personalized interview questions, identifies skill gaps, creates a preparation roadmap, and builds ATS-optimized resumes tailored to the role.
 
+Live Demo
+
+🌐 Frontend: https://interview-ai-six-xi.vercel.app
+⚙️ Backend: https://interview-ai-backend-dsou.onrender.com
+
 <img width="790" height="557" alt="image" src="https://github.com/user-attachments/assets/51d016c1-d5e3-43e1-bc08-afa43f629b4b" />
 <img width="790" height="557" alt="image" src="https://github.com/user-attachments/assets/fc60f759-3309-4a6d-a5b6-ff49b3790941" />
 
