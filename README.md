@@ -8,7 +8,8 @@ Live Demo
 ⚙️ Backend: https://interview-ai-backend-dsou.onrender.com
 
 <img width="790" height="557" alt="image" src="https://github.com/user-attachments/assets/51d016c1-d5e3-43e1-bc08-afa43f629b4b" />
-<img width="790" height="557" alt="image" src="https://github.com/user-attachments/assets/fc60f759-3309-4a6d-a5b6-ff49b3790941" />
+<img width="790" height="557" alt="image" src="https://github.com/user-attachments/assets/fc60f759-3309-4a6d-a5b6-ff49b3790941" /> <img width="603" height="348" alt="image" src="https://github.com/user-attachments/assets/64e80925-5451-4829-a2f1-129372356551" />
+
 
 
 
