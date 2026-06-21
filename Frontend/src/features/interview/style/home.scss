@@ -400,3 +400,25 @@ $font-sub:       'Lora', serif;
         }
     }
 }
+
+.logout-btn {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.5rem;
+    padding: 0.4rem 1rem;
+    background: $accent;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-family: $font-stack;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba($accent, 0.3);
+    transition: opacity 0.2s;
+    z-index: 100;
+
+    &:hover {
+        opacity: 0.85;
+    }
+}

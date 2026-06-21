@@ -48,3 +48,8 @@ export const generateResumePdf = async ({ interviewReportId }) => {
 
     return response.data
 }
+
+export const generateResumeHtml = async ({ interviewReportId }) => {
+    const response = await api.post(`/api/interview/resume/html/${interviewReportId}`)
+    return response.data
+}

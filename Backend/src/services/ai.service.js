@@ -60,7 +60,10 @@ async function generateInterviewReport({ resume, selfDescription, jobDescription
 }
 
 async function generatePdfFromHtml(htmlContent) {
-    const browser = await puppeteer.launch()
+    const browser = await puppeteer.launch({
+    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH ,
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+})
     const page = await browser.newPage()
     await page.setContent(htmlContent, { waitUntil: "networkidle0" })
 
@@ -109,4 +112,32 @@ async function generateResumePdf({ resume, selfDescription, jobDescription }) {
     return pdfBuffer
 }
 
-module.exports = { generateInterviewReport, generateResumePdf }
+async function generateResumeHtml({ resume, selfDescription, jobDescription }) {
+    const prompt = `Generate a professional resume in HTML format for a candidate with the following details:
+                        Resume: ${resume}
+                        Self Description: ${selfDescription}
+                        Job Description: ${jobDescription}
+
+                        Respond with a valid JSON object with a single field "html" containing the HTML content of the resume.`
+
+    const response = await groq.chat.completions.create({
+        model: "llama-3.3-70b-versatile",
+        messages: [
+            {
+                role: "system",
+                content: `You are an expert resume writer. Always respond with valid JSON only in this format: {"html": "<html content here>"}`
+            },
+            {
+                role: "user",
+                content: prompt
+            }
+        ],
+        response_format: { type: "json_object" },
+        temperature: 0.7,
+    })
+
+    return JSON.parse(response.choices[0].message.content).html
+}
+
+module.exports = { generateInterviewReport, generateResumePdf, generateResumeHtml }
+
